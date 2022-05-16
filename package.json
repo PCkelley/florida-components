@@ -1,14 +1,26 @@
 {
   "name": "florida-components",
   "version": "0.1.0",
-  "private": true,
+  "main": "dist/florida-components.common.js",
+  "module": "dist/florida-components.umd.min.js",
+  "author": "Paige Kelley",
+  "description": "## Project setup ``` npm install ```",
+  "files": [
+    "dist/*.{js,css}"
+  ],
+  "private": false,
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "build": "npm run build:lib && npm run build:style",
+    "build:lib": "vue-cli-service build --target lib --name florida-components src/index.js",
+    "build:style": "postcss src/tailwind.css -o dist/styles.css"
   },
   "dependencies": {
+    "autoprefixer": "^10.4.7",
     "core-js": "^3.8.3",
+    "postcss": "^8.4.13",
+    "postcss-cli": "^9.1.0",
+    "tailwindcss": "^3.0.24",
     "vue": "^3.2.13"
   },
   "devDependencies": {

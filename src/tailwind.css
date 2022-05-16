@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply
+      bg-white
+      text-slate-800
+      dark:bg-slate-800
+      dark:text-white
+  }
+  h1 {
+    @apply
+      text-xl
+      font-bold
+      text-teal-500
+  }
+}
